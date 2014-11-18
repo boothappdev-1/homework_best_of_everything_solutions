@@ -7,3 +7,9 @@
   <dd><%= @cuisine.name %></dd>
 
 </dl>
+
+<ul>
+  <% @cuisine.dishes.each do |dish| %>
+    <li><%= dish.name %></li>
+  <% end %>
+</ul>

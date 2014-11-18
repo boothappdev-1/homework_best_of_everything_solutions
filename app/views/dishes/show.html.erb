@@ -7,18 +7,23 @@
   <dd><%= @dish.name %></dd>
 
   <dt>Cuisine</dt>
-  <dd><%= Cuisine.find_by({ :id => @dish.cuisine_id }).name %></dd>
+  <dd><%= @dish.cuisine.name %></dd>
 
   <dt>Favorites</dt>
   <dd>
     <ul>
-      <% Favorite.where({ :dish_id => @dish.id }).each do |favorite| %>
+      <% @dish.favorites.each do |favorite| %>
         <li>
-          <%= User.find_by({ :id => favorite.user_id }).username %>
+          <%= favorite.user.username %>
           <i class="fa fa-heart"></i>
-          <%= Venue.find_by({ :id => favorite.venue_id }).name %>
+          <%= favorite.venue.name %>
         </li>
       <% end %>
     </ul>
   </dd>
 </dl>
+
+
+
+
+

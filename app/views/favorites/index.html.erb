@@ -20,9 +20,9 @@
   <tbody>
     <% @favorites.each do |favorite| %>
       <tr>
-        <td><%= User.find_by({ :id => favorite.user_id }).username %></td>
-        <td><%= Dish.find_by({ :id => favorite.dish_id }).name %></td>
-        <td><%= Venue.find_by({ :id => favorite.venue_id }).name %></td>
+        <td><%= favorite.user.username %></td>
+        <td><%= favorite.dish.name %></td>
+        <td><%= favorite.venue.name %></td>
         <td><%= favorite.notes %></td>
         <td>
           <a href="/favorites/<%= favorite.id %>" class="btn btn-primary">

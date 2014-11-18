@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # Routes for the Cuisine resource:
   # CREATE
-  get('/cuisines/new', { :controller => 'cuisines', :action => 'new' })
+  get '/cuisines/new', :controller => 'cuisines', :action => 'new'
   get('/create_cuisine', { :controller => 'cuisines', :action => 'create' })
 
   # READ
